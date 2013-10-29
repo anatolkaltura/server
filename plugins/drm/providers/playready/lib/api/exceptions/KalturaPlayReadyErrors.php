@@ -9,4 +9,5 @@ class KalturaPlayReadyErrors
 	const PLAYREADY_POLICY_NOT_FOUND = "PLAYREADY_POLICY_NOT_FOUND, PlayReady policy not found for entry \"%s\"";
 	const PLAYREADY_PROFILE_NOT_FOUND = "PLAYREADY_PROFILE_NOT_FOUND, PlayReady profile configuration not found";
 	const PLAYREADY_POLICY_OBJECT_NOT_FOUND = "PLAYREADY_POLICY_OBJECT_NOT_FOUND, PlayReady policy object with id \"%s\" not found";
+	const KEY_ID_DONT_MATCH = "KEY_ID_DONT_MATCH, Input key ID \"%s\" doesn't match entry key ID \"%s\"";
 }

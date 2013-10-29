@@ -152,7 +152,10 @@ class PlayReadyDrmService extends KalturaBaseService
 			 $entry = entryPeer::retrieveByPK($entryId); 
 			 if(!$entry)
 				throw new KalturaAPIException(KalturaErrors::ENTRY_ID_NOT_FOUND, $entryId);	
-			//TODO: validate key id on the entry is the same as the input		 
+				
+			$entryKeyId = $entry->getFromCustomData("playready_key_id");
+			if($entryKeyId != $keyId)
+				throw new KalturaAPIException(KalturaPlayReadyErrors::KEY_ID_DONT_MATCH, $keyId, $entryKeyId);	
 		}
 		else 
 		{
