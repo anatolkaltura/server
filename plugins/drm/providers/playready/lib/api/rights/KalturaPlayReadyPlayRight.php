@@ -6,7 +6,7 @@
 class KalturaPlayReadyPlayRight extends KalturaPlayReadyRight
 {
     /**
-	 * @var int
+	 * @var KalturaPlayReadyAnalogVideoOPL
 	 */
 	public $analogVideoOPL ;
 	
@@ -16,12 +16,12 @@ class KalturaPlayReadyPlayRight extends KalturaPlayReadyRight
 	public $analogVideoOutputProtectionList ;
 	
     /**
-	 * @var int
+	 * @var KalturaPlayReadyDigitalAudioOPL
 	 */
 	public $compressedDigitalAudioOPL ;
 	
     /**
-	 * @var int
+	 * @var KalturaPlayReadyCompressedDigitalVideoOPL
 	 */
 	public $compressedDigitalVideoOPL ;
 
@@ -31,12 +31,12 @@ class KalturaPlayReadyPlayRight extends KalturaPlayReadyRight
 	public $digitalAudioOutputProtectionList; 
 	
 	/**
-	 * @var int
+	 * @var KalturaPlayReadyDigitalAudioOPL
 	 */	
 	public $uncompressedDigitalAudioOPL;
 
     /**
-	 * @var int
+	 * @var KalturaPlayReadyUncompressedDigitalVideoOPL
 	 */
 	public $uncompressedDigitalVideoOPL; 
 	

@@ -21,7 +21,7 @@ class KalturaPlayReadyPolicy extends KalturaDrmPolicy
 	public $licenseRemovalDuration;	
 	
 	/**
-	 * @var int
+	 * @var KalturaPlayReadyMinimumLicenseSecurityLevel
 	 */
 	public $minSecurityLevel;	
 	
