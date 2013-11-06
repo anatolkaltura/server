@@ -11,7 +11,7 @@ class KalturaPlayReadyCopyRight extends KalturaPlayReadyRight
 	public $copyCount;
 	
 	/**
-	 * @var string
+	 * @var KalturaPlayReadyCopyEnablerHolderArray
 	 */
 	public $copyEnablers;
 	
