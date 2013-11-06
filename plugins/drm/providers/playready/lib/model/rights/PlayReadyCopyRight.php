@@ -11,7 +11,7 @@ class PlayReadyCopyRight extends PlayReadyRight
 	private $copyCount;
 	
 	/**
-	 * @var string
+	 * @var array of PlayReadyCopyEnablerType
 	 */
 	private $copyEnablers;
 	
@@ -37,7 +37,7 @@ class PlayReadyCopyRight extends PlayReadyRight
 	}
 
 	/**
-	 * @param string $copyEnablers
+	 * @param array $copyEnablers
 	 */
 	public function setCopyEnablers($copyEnablers) {
 		$this->copyEnablers = $copyEnablers;

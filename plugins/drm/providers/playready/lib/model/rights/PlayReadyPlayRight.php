@@ -68,7 +68,7 @@ class PlayReadyPlayRight extends PlayReadyRight
 	 * {1B4542E3-B5CF-4C99-B3BA-829AF46C92F8} - WiVu
 	 * {5ABF0F0D-DC29-4B82-9982-FD8E57525BFC}  - AirPlay
 	 * 
-	 * @var string
+	 * @var array of PlayReadyPlayEnablerType
 	 */
 	private $playEnablers;
 	
@@ -192,7 +192,7 @@ class PlayReadyPlayRight extends PlayReadyRight
 	}
 
 	/**
-	 * @param string $playEnablers
+	 * @param array $playEnablers
 	 */
 	public function setPlayEnablers($playEnablers) {
 		$this->playEnablers = $playEnablers;
