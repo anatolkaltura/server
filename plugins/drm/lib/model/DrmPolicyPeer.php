@@ -63,8 +63,8 @@ class DrmPolicyPeer extends BaseDrmPolicyPeer
 	public static function retrieveBySystemName ($systemName, $excludeId = null, PropelPDO $con = null)
 	{
 		$c = new Criteria();
-		$criteria->add ( EventNotificationTemplatePeer::SYSTEM_NAME, $systemName );		
-		return DrmPolicyPeer::doSelectOne($criteria);
+		$c->add ( DrmPolicyPeer::SYSTEM_NAME, $systemName );		
+		return DrmPolicyPeer::doSelectOne($c);
 	}
 	
 } // DrmPolicyPeer

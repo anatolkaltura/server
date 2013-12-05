@@ -13,9 +13,12 @@ class KalturaPlayReadyRightArray extends KalturaTypedArray
 
 		foreach ($arr as $obj)
 		{
-			$nObj = new KalturaPlayReadyRight();
-			$nObj->fromObject($obj);
-			$newArr[] = $nObj;
+			$nObj = self::getInstanceByDbObject($obj);
+			if($nObj)
+			{
+				$nObj->fromObject($obj);
+				$newArr[] = $nObj;
+			}
 		}
 		
 		return $newArr;
@@ -24,5 +27,15 @@ class KalturaPlayReadyRightArray extends KalturaTypedArray
 	public function __construct()
 	{
 		parent::__construct("KalturaPlayReadyRight");	
+	}
+	
+	private static function getInstanceByDbObject($obj)
+	{
+		if($obj instanceof PlayReadyCopyRight)
+			return new KalturaPlayReadyCopyRight();
+		if($obj instanceof PlayReadyPlayRight)
+			return new KalturaPlayReadyPlayRight();
+			
+		return null;
 	}
 }
