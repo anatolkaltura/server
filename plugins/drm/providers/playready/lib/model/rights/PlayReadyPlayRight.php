@@ -20,9 +20,8 @@ class PlayReadyPlayRight extends PlayReadyRight
 	 * {225CD36F-F132-49EF-BA8C-C91EA28E4369}	| 0, 1, 2, 3						| Best Effort Explicit Analog Television Output Restriction
 	 * {811C5110-46C8-4C6E-8163- C0482A15D47E}	| 520000							| Image constraint for Analog Component Video Output
 	 * {D783A191-E083-4BAF-B2DA-E69F910B3772}	| 520000							| Image constraint for Analog Computer Monitor Output 
-	 * {760AE755-682A-41E0-B1B3-DCDF836A7306}	| 0									| Digital Video Only Content
 	 * 
-	 * @var array
+	 * @var array of PlayReadyAnalogVideoOPId
 	 */
 	private $analogVideoOutputProtectionList ;
 	
@@ -43,7 +42,7 @@ class PlayReadyPlayRight extends PlayReadyRight
 	 * --------------------------------------------------------------------------------------------------------------
 	 * {6D5CFA59-C250-4426-930E-FAC72C8FCFA6}	| 00, 01, 10, 11						| SCMS. See Table 3.5.2.8 (SCMS Control Bits)
 	 *
-	 * @var array
+	 * @var array of PlayReadyDigitalAudioOPId
 	 */
 	private $digitalAudioOutputProtectionList; 
 	

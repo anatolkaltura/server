@@ -132,6 +132,10 @@ class KalturaDrmPolicy extends KalturaObject implements IFilterable
 		return $obj;
 	}
 	
+	protected function validatePolicy()
+	{
+	}
+	
 	public function getExtraFilters()
 	{
 		return array();

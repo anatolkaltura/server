@@ -11,7 +11,7 @@ class KalturaPlayReadyPlayRight extends KalturaPlayReadyRight
 	public $analogVideoOPL ;
 	
 	/**
-	 * @var KalturaKeyValueArray
+	 * @var KalturaPlayReadyAnalogVideoOPIdHolderArray
 	 */
 	public $analogVideoOutputProtectionList ;
 	
@@ -26,7 +26,7 @@ class KalturaPlayReadyPlayRight extends KalturaPlayReadyRight
 	public $compressedDigitalVideoOPL ;
 
 	/**
-	 * @var KalturaKeyValueArray
+	 * @var KalturaPlayReadyDigitalAudioOPIdHolderArray
 	 */
 	public $digitalAudioOutputProtectionList; 
 	
