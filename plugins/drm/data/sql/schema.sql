@@ -25,7 +25,6 @@ CREATE TABLE `drm_profile`
 	`custom_data` TEXT,
 	PRIMARY KEY (`id`),
 	KEY `partner_id_index`(`partner_id`)
-
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
@@ -49,6 +48,32 @@ CREATE TABLE `drm_policy`
 	`license_type` INTEGER,
 	`license_expiration_policy` INTEGER,
 	`duration` INTEGER,
+	`created_at` DATETIME,
+	`updated_at` DATETIME,
+	`custom_data` TEXT,
+	PRIMARY KEY (`id`),
+	KEY `partner_id_index`(`partner_id`),
+	KEY `status_index`(`status`)
+)Type=InnoDB;
+
+#-----------------------------------------------------------------------------
+#-- drm_device
+#-----------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `drm_device`;
+
+
+CREATE TABLE `drm_device`
+(
+	`id` INTEGER  NOT NULL AUTO_INCREMENT,
+	`partner_id` INTEGER  NOT NULL,
+	`profile_id` INTEGER  NOT NULL,
+	`userId` VARCHAR(128)  NOT NULL,
+	`deviceId` VARCHAR(128)  NOT NULL,
+	`version` VARCHAR(128),
+	`platformDescriptor` TEXT,
+	`provider` INTEGER  NOT NULL,
+	`status` INTEGER  NOT NULL,
 	`created_at` DATETIME,
 	`updated_at` DATETIME,
 	`custom_data` TEXT,

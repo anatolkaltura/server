@@ -4,7 +4,7 @@
  * @subpackage api.filters.base
  * @abstract
  */
-abstract class KalturaDrmPolicyBaseFilter extends KalturaFilter
+abstract class KalturaDrmDeviceBaseFilter extends KalturaFilter
 {
 	static private $map_between_objects = array
 	(
@@ -12,26 +12,27 @@ abstract class KalturaDrmPolicyBaseFilter extends KalturaFilter
 		"idIn" => "_in_id",
 		"partnerIdEqual" => "_eq_partner_id",
 		"partnerIdIn" => "_in_partner_id",
-		"nameLike" => "_like_name",
-		"systemNameLike" => "_like_system_name",
+		"userIdLike" => "_like_user_id",
+		"deviceIdLike" => "_like_device_id",
+		"versionLike" => "_like_version",
 		"providerEqual" => "_eq_provider",
 		"providerIn" => "_in_provider",
 		"profileIdEqual" => "_eq_profile_id",
 		"profileIdIn" => "_in_profile_id",
 		"statusEqual" => "_eq_status",
 		"statusIn" => "_in_status",
-		"scenarioEqual" => "_eq_scenario",
-		"scenarioIn" => "_in_scenario",
 	);
 
 	static private $order_by_map = array
 	(
 		"+id" => "+id",
 		"-id" => "-id",
-		"+name" => "+name",
-		"-name" => "-name",
-		"+systemName" => "+system_name",
-		"-systemName" => "-system_name",
+		"+userId" => "+user_id",
+		"-userId" => "-user_id",
+		"+deviceId" => "+device_id",
+		"-deviceId" => "-device_id",
+		"+version" => "+version",
+		"-version" => "-version",
 	);
 
 	public function getMapBetweenObjects()
@@ -67,12 +68,17 @@ abstract class KalturaDrmPolicyBaseFilter extends KalturaFilter
 	/**
 	 * @var string
 	 */
-	public $nameLike;
+	public $userIdLike;
 
 	/**
 	 * @var string
 	 */
-	public $systemNameLike;
+	public $deviceIdLike;
+
+	/**
+	 * @var string
+	 */
+	public $versionLike;
 
 	/**
 	 * @var KalturaDrmProviderType
@@ -104,15 +110,4 @@ abstract class KalturaDrmPolicyBaseFilter extends KalturaFilter
 	 * @var string
 	 */
 	public $statusIn;
-
-	/**
-	 * @var KalturaDrmLicenseScenario
-	 */
-	public $scenarioEqual;
-
-	/**
-	 * @dynamicType KalturaDrmLicenseScenario
-	 * @var string
-	 */
-	public $scenarioIn;
 }

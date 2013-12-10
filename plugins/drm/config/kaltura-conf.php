@@ -32,5 +32,8 @@ return array (
     'DrmPolicyTableMap' => 'lib/model/map/DrmPolicyTableMap.php',
     'DrmPolicyPeer' => 'lib/model/DrmPolicyPeer.php',
     'DrmPolicy' => 'lib/model/DrmPolicy.php',
+    'DrmDeviceTableMap' => 'lib/model/map/DrmDeviceTableMap.php',
+    'DrmDevicePeer' => 'lib/model/DrmDevicePeer.php',
+    'DrmDevice' => 'lib/model/DrmDevice.php',
   ),
 );

@@ -54,7 +54,7 @@ class KalturaPlayReadyPolicy extends KalturaDrmPolicy
 		return $dbObject;
 	}
 	
-	protected function validatePolicy()
+	public function validatePolicy()
 	{
 		if(count($this->rights))
 		{

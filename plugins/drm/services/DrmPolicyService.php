@@ -37,7 +37,7 @@ class DrmPolicyService extends KalturaBaseService
 		$drmPolicy->validatePropertyNotNull('profileId');
 		
 		// validate values
-		//TODO set default values
+		$drmPolicy->validatePolicy();
 						
 		if (!PartnerPeer::retrieveByPK($drmPolicy->partnerId)) {
 			throw new KalturaAPIException(KalturaErrors::INVALID_PARTNER_ID, $drmPolicy->partnerId);
@@ -105,7 +105,8 @@ class DrmPolicyService extends KalturaBaseService
 		if (!$dbDrmPolicy) {
 			throw new KalturaAPIException(KalturaErrors::INVALID_OBJECT_ID, $drmPolicyId);
 		}
-		//TODO: perform validations
+		
+		$drmPolicy->validatePolicy();
 						
 		$dbDrmPolicy = $drmPolicy->toUpdatableObject($dbDrmPolicy);
 		$dbDrmPolicy->save();

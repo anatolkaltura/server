@@ -3,7 +3,7 @@
  * @package plugins.drm
  * @subpackage api.objects
  */
-class KalturaDrmPolicy extends KalturaObject implements IFilterable
+class KalturaDrmDevice extends KalturaObject implements IFilterable
 {	
 	/**
 	 * @var int
@@ -23,19 +23,25 @@ class KalturaDrmPolicy extends KalturaObject implements IFilterable
 	 * @var string
 	 * @filter like,order
 	 */
-	public $name;
+	public $userId;
 	
 	/**
 	 * @var string
 	 * @filter like,order
 	 */
-	public $systemName;
+	public $deviceId;
+	
+	/**
+	 * @var string
+	 * @filter like,order
+	 */
+	public $version;
 	
 	
 	/**
 	 * @var string
 	 */
-	public $description;
+	public $platformDescriptor;
 	
 	/**
 	 * @var KalturaDrmProviderType
@@ -54,28 +60,6 @@ class KalturaDrmPolicy extends KalturaObject implements IFilterable
 	 * @filter eq,in
 	 */
 	public $status;
-	
-	/**
-	 * @var KalturaDrmLicenseScenario
-	 * @filter eq,in
-	 */
-	public $scenario;
-	
-	/**
-	 * @var KalturaDrmLicenseType
-	 */
-	public $licenseType;
-	
-	/**
-	 * @var KalturaDrmLicenseExpirationPolicy
-	 */
-	public $licenseExpirationPolicy;
-	
-	/**
-	 * Duration in days the license is effective
-	 * @var int
-	 */
-	public $duration;
 		
 	/**
 	 * @var int
@@ -95,16 +79,13 @@ class KalturaDrmPolicy extends KalturaObject implements IFilterable
 	private static $map_between_objects = array(
 		'id',
 		'partnerId',
-		'name',
-		'systemName',
-		'description',
 		'provider',
 		'profileId',
+		'userId',
+		'deviceId',
+		'version',
+		'platformDescriptor',
 		'status',
-		'scenario',
-		'licenseType',
-		'licenseExpirationPolicy',
-		'duration',
 		'createdAt',
 		'updatedAt',
 	 );
@@ -117,27 +98,23 @@ class KalturaDrmPolicy extends KalturaObject implements IFilterable
 	public function toObject($dbObject = null, $skip = array())
 	{
 		if (is_null($dbObject))
-			$dbObject = new DrmPolicy();
+			$dbObject = new DrmDevice();
 		parent::toObject($dbObject, $skip);		
 		return $dbObject;
 	}
 		
 	/**
 	 * @param int $type
-	 * @return KalturaDrmPolicy
+	 * @return KalturaDrmDevice
 	 */
 	static function getInstanceByType ($provider)
 	{
-		$obj = KalturaPluginManager::loadObject('KalturaDrmPolicy', $provider);		
+		$obj = KalturaPluginManager::loadObject('KalturaDrmDevice', $provider);		
 		if(!$obj)
-			$obj = new KalturaDrmPolicy();
+			$obj = new KalturaDrmDevice();
 		return $obj;
 	}
-	
-	public function validatePolicy()
-	{
-	}
-	
+
 	public function getExtraFilters()
 	{
 		return array();
