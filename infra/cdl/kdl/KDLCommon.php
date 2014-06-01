@@ -1,6 +1,6 @@
 <?php
 	class KDLSanityLimits {
-		const MinDuration = 100;
+		const MinDuration = 100;//
 		const MaxDuration = 360000000;	// 10h
 		const MinBitrate = 1;
 		const MaxBitrate = 400000;		// 40MBps
